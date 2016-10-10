@@ -27,7 +27,11 @@ class TweetsController < ApplicationController
 
   def destroy
     text = Tweet.find(params[:id])
-    render json: text.destroy
+    if text.present?
+      render json: text.destroy
+    else
+      render json: { errors:"couldnt delete tweet, it doesn't exist"}, status: 404
+    end
   end 
 
   private
