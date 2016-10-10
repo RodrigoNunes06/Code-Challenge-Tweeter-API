@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20161010091119) do
 
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "tweet"
+    t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tweets_on_user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161010091119) do
     t.string   "name"
     t.string   "email"
     t.string   "password"
+    t.string   "auth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
